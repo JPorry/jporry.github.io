@@ -9,7 +9,6 @@ $(document).ready(function(){
 	var tabbedViews = $('.tabbed-view .tabs li');
 
 	$('.tabbed-view').each(function(){
-		console.log(this);
 		$tv = $(this);
 		$tv.find('.tabs li').first().addClass('active');
 		$tv.find('pre').first().addClass('active');
