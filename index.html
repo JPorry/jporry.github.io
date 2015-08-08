@@ -35,6 +35,55 @@
     		<li>No gutter, every cell can have their own padding. I find it easier and more flexible this way.</li>
     		<li>Built with a mobile first approach, every breakpoint add styles from itself and up</li>
     	</ul>
+
+		<h2>Docs</h2>
+		<div class="demo-box">
+			<pre><code class="language-scss">@mixin row($padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin grid-cell($size:1, $of:1, $offset:0, $padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$size</td><td>No</td><td>Size of the cell. Defaults to 1.</td></tr>
+				<tr><td>$of</td><td>No</td><td>Maximum number of cells in the row. Defaults to 1</td></tr>
+				<tr><td>$offset</td><td>No</td><td>Number of rows that the cell will be pushed to the right. Defaults to 0</td></tr>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-grid-cell($size:1, $of:1, $offset:0, $padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the rule to be applied to. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>$size</td><td>No</td><td>Size of the cell. Defaults to 1.</td></tr>
+				<tr><td>$of</td><td>No</td><td>Maximum number of cells in the row. Defaults to 1</td></tr>
+				<tr><td>$offset</td><td>No</td><td>Number of rows that the cell will be pushed to the right. Defaults to 0</td></tr>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-hide()</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-show($display:block)</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>$display</td><td>No</td><td>Type of the display for the Element. Defaults to 'block'</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-styles(){ @content }</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>@content</td><td>Yes</td><td>Block of CSS rules to be applied to the element</td></tr>
+			</table>
+		</div>
+
     	<h2>Mixins</h2>
 
     	<h3>Breakpoints Show / Hide</h3>
