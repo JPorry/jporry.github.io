@@ -84,7 +84,48 @@
 			</table>
 		</div>
 
-    	<h2>Mixins</h2>
+    	<h2>Examples <span class="pcWarning">(go ahead, resize the window)</span></h2>
+
+		<h3>Breakpoint Styles</h3>
+		<div class="demo-box" id="breakpointStyles-demo">
+			<p class="change">Hello World!!</p>
+
+			<div class="tabbed-view">
+				<ul class="tabs">
+					<li>HTML</li>
+					<li>SCSS</li>
+				</ul>
+    			<pre><code class="language-markup">
+&lt;p class="change">Hello World!!&lt;/p>
+				</code></pre>
+				<pre><code class="language-scss">
+.change{
+	background-color: #F1C40F;
+	color: #fff;
+	padding: 5px 10px;
+
+	@include small-styles(){
+	background-color: #3498DB;
+	padding: 10px;
+	}
+
+	@include medium-styles(){
+	background-color: #F39C12;
+	color: #000;
+	}
+
+	@include large-styles(){
+	background-color: #E74C3C;
+	padding: 10px 15px;
+	}
+
+	@include x-large-styles(){
+	background-color: #1ABC9C;
+	}
+}
+				</code></pre>
+			</div>
+		</div>
 
     	<h3>Breakpoints Show / Hide</h3>
 		<div class="demo-box" id="breakpoints-demo">

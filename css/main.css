@@ -57,7 +57,6 @@ table {
   box-sizing: border-box;
 }
 
-/* LAYOUT */
 /* GRID */
 /* HELPERS */
 .widget {
@@ -638,6 +637,10 @@ body > section > ul li {
   margin-bottom: 5px;
 }
 
+body > section table {
+  margin-bottom: 40px;
+}
+
 #breakpoints-demo .alert {
   display: none;
 }
@@ -784,6 +787,39 @@ body > section > ul li {
   }
 }
 
+#breakpointStyles-demo .change {
+  background-color: #F1C40F;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+@media screen and (min-width: 568px) {
+  #breakpointStyles-demo .change {
+    background-color: #3498DB;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #breakpointStyles-demo .change {
+    background-color: #F39C12;
+    color: #000;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #breakpointStyles-demo .change {
+    background-color: #E74C3C;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #breakpointStyles-demo .change {
+    background-color: #1ABC9C;
+  }
+}
+
 .tabbed-view {
   margin: 10px 0;
 }
@@ -819,4 +855,14 @@ body > section > ul li {
 
 .tabbed-view > pre.active {
   display: block;
+}
+
+.pcWarning {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .pcWarning {
+    display: inline;
+  }
 }
