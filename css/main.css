@@ -562,6 +562,11 @@ body > nav > header > h1, body > nav > header > h2 {
   margin: 20px 0 10px;
 }
 
+body > nav > header > h1 a, body > nav > header > h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 body > nav > header > h2 {
   color: #ECF0F1;
   font-size: 1.1rem;

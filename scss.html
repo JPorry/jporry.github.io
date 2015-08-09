@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JPorry's github site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav>
+    	<header>
+    		<h1><a href="index.html">JPorry</a></h1>
+    		<h2>GitHub Projects</h2>
+    	</header>
+    	<button class="secondary"><i class="fa fa-bars"></i></button>
+		<div class="side-menu">
+			<ul>
+				<li class="selected"><a href="scss.html">SCSS Mixins</a></li>
+			</ul>
+		</div>
+    </nav>
+    <section>
+    	<h1>SCSS MIXINS</h1>
+    	<h2>Description</h2>
+    	<p>A bunch of utilities that I usually use on my projects:</p>
+    	<ul>
+    		<li>Responsive grid system based on mixins, so I can keep my HTML code semantic and clean. No more -grid-medium-1-12 classes on your code, YAY!</li>
+    		<li>Infinite number of columns, rows with 12 columns, 3 or 24 are perfectly fine</li>
+    		<li>Allows offsets for pushing the cells to the right position</li>
+    		<li>Utilities such as hiding and showing elements based on the size of the screen</li>
+    		<li>Mixins for adding blocks of css to specific screen sizes</li>
+    		<li>No gutter, every cell can have their own padding. I find it easier and more flexible this way.</li>
+    		<li>Built with a mobile first approach, every breakpoint add styles from itself and up</li>
+    	</ul>
+
+		<h2>Docs</h2>
+		<div class="demo-box">
+			<pre><code class="language-scss">@mixin row($padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin grid-cell($size:1, $of:1, $offset:0, $padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$size</td><td>No</td><td>Size of the cell. Defaults to 1.</td></tr>
+				<tr><td>$of</td><td>No</td><td>Maximum number of cells in the row. Defaults to 1</td></tr>
+				<tr><td>$offset</td><td>No</td><td>Number of rows that the cell will be pushed to the right. Defaults to 0</td></tr>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-grid-cell($size:1, $of:1, $offset:0, $padding:'auto')</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the rule to be applied to. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>$size</td><td>No</td><td>Size of the cell. Defaults to 1.</td></tr>
+				<tr><td>$of</td><td>No</td><td>Maximum number of cells in the row. Defaults to 1</td></tr>
+				<tr><td>$offset</td><td>No</td><td>Number of rows that the cell will be pushed to the right. Defaults to 0</td></tr>
+				<tr><td>$padding</td><td>No</td><td>Padding of the box, admits short forms like '0 25px'. If unspecified then no padding will be added</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-hide()</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-show($display:block)</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>$display</td><td>No</td><td>Type of the display for the Element. Defaults to 'block'</td></tr>
+			</table>
+
+			<pre><code class="language-scss">@mixin $screenSize-styles(){ @content }</code></pre>
+			<table>
+				<thead><td width="150px">Param</td><td width="150px">Required</td><td>Meaning</td></thead>
+				<tr><td>$screenSize</td><td>Yes</td><td>Minimum size of the screen for the element to be hidden. Possible values ['small', 'medium', 'large', 'x-large']</td></tr>
+				<tr><td>@content</td><td>Yes</td><td>Block of CSS rules to be applied to the element</td></tr>
+			</table>
+		</div>
+
+    	<h2>Examples <span class="pcWarning">(go ahead, resize the window)</span></h2>
+
+		<h3>Breakpoint Styles</h3>
+		<div class="demo-box" id="breakpointStyles-demo">
+			<p class="change">Hello World!!</p>
+
+			<div class="tabbed-view">
+				<ul class="tabs">
+					<li>HTML</li>
+					<li>SCSS</li>
+				</ul>
+    			<pre><code class="language-markup">
+&lt;p class="change">Hello World!!&lt;/p>
+				</code></pre>
+				<pre><code class="language-scss">
+.change{
+	background-color: #F1C40F;
+	color: #fff;
+	padding: 5px 10px;
+
+	@include small-styles(){
+	background-color: #3498DB;
+	padding: 10px;
+	}
+
+	@include medium-styles(){
+	background-color: #F39C12;
+	color: #000;
+	}
+
+	@include large-styles(){
+	background-color: #E74C3C;
+	padding: 10px 15px;
+	}
+
+	@include x-large-styles(){
+	background-color: #1ABC9C;
+	}
+}
+				</code></pre>
+			</div>
+		</div>
+
+    	<h3>Breakpoints Show / Hide</h3>
+		<div class="demo-box" id="breakpoints-demo">
+			<div class="alert phoneScreen">Mobile Screen (&lt;568px)</div>
+			<div class="alert smallScreen">Small Screen (>=568px)</div>
+			<div class="alert mediumScreen">Medium Screen (>=768px)</div>
+			<div class="alert largeScreen">Large Screen (>=1024px)</div>
+			<div class="alert x-largeScreen">Extra Large Screen (>=1280px)</div>
+
+			<div class="tabbed-view">
+    			<ul class="tabs">
+    				<li>HTML</li>
+    				<li>SCSS</li>
+    			</ul>
+    			<pre><code class="language-markup">
+&lt;div class="alert phoneScreen">Mobile Screen (&lt;568px)&lt;/div>
+&lt;div class="alert smallScreen">Small Screen (>=568px)&lt;/div>
+&lt;div class="alert mediumScreen">Medium Screen (>=768px)&lt;/div>
+&lt;div class="alert largeScreen">Large Screen (>=1024px)&lt;/div>
+&lt;div class="alert x-largeScreen">Extra Large Screen (>=1280px)&lt;/div>
+    			</code></pre>
+
+    			<pre><code class="language-scss">
+.alert{
+	display: none;
+}
+.phoneScreen{
+	display: block;
+	@include small-hide();
+}
+.smallScreen{
+	@include small-show();
+	@include medium-hide();
+}
+.mediumScreen{
+	@include medium-show();
+	@include large-hide();
+}
+.largeScreen{
+	@include large-show();
+	@include x-large-hide();
+}
+.x-largeScreen{
+	@include x-large-show();
+}
+    			</code></pre>
+		</div>
+	</div>
+		
+		<h3>Grid</h3>
+    	<div class="demo-box" id="grid-demo">
+    		<div class="content">
+				<article class="big">big</article>
+				<article>normal</article>
+				<article>normal</article>
+    		</div>
+    		<div class="content">
+				<article class="medium">medium</article>
+				<article class="big">big</article>
+    		</div>
+    		<div class="content">
+				<article class="block">block</article>
+    		</div>
+    		<div class="content">
+				<article class="medium">medium</article>
+				<article>normal</article>
+				<article class="medium">medium</article>
+    		</div>
+    		<div class="tabbed-view">
+    			<ul class="tabs">
+    				<li>HTML</li>
+    				<li>SCSS</li>
+    			</ul>
+    			<pre><code class="language-markup">
+&lt;div class="content">
+	&lt;article class="big">big&lt;/article>
+	&lt;article>normal&lt;/article>
+	&lt;article>normal&lt;/article>
+&lt;/div>
+&lt;div class="content">
+	&lt;article class="medium">medium&lt;/article>
+	&lt;article class="big">big&lt;/article>
+&lt;/div>
+&lt;div class="content">
+	&lt;article class="block">block&lt;/article>
+&lt;/div>
+&lt;div class="content">
+	&lt;article class="medium">medium&lt;/article>
+	&lt;article>normal&lt;/article>
+	&lt;article class="medium">medium&lt;/article>
+&lt;/div>
+				</code></pre>
+				<pre><code class="language-scss">
+.content{
+	@include row();
+
+	article{
+		min-height: 50px; /* Demo purposes */
+		border:1px solid #eee; /* Demo purposes */
+		
+		@include grid-cell(1,5);
+	}
+
+	article.big{
+		@include grid-cell(3,5);
+	}
+
+	article.medium{
+		@include grid-cell(2,5);
+	}
+
+	article.block{
+		@include grid-cell();
+	}
+}
+				</code></pre>
+    		</div>
+    	</div>
+
+    	<h3>Responsive Grid</h3>
+    	<div class="demo-box" id="responsive-grid-demo">
+    		<div class="content">
+    			<article class="big">Big</article>
+    			<article>Normal</article>
+    			<article>Normal</article>
+    		</div>
+    		<div class="content">
+    			<article class="medium">Medium</article>
+    			<article class="big">Big</article>
+    		</div>
+    	</div>
+    	<div class="tabbed-view">
+    			<ul class="tabs">
+    				<li>HTML</li>
+    				<li>SCSS</li>
+    			</ul>
+    			<pre><code class="language-markup">
+&lt;div class="content">
+	&lt;article class="big">Big&lt;/article>
+	&lt;article>Normal&lt;/article>
+	&lt;article>Normal&lt;/article>
+&lt;/div>
+&lt;div class="content">
+	&lt;article class="medium">Medium&lt;/article>
+	&lt;article class="big">Big&lt;/article>
+&lt;/div>
+    			</code></pre>
+    			<pre><code class="language-scss">
+.content{
+	@include row();
+
+	article{
+		min-height: 50px; /* Demo purposes */
+		border:1px solid #eee; /* Demo purposes */
+		
+		@include grid-cell();
+		@include medium-grid-cell(1,5);
+	}
+
+	article.big{
+		@include medium-grid-cell(3,5);
+	}
+
+	article.medium{
+		@include medium-grid-cell(2,5);
+	}
+}
+    			</code></pre>
+    </section>
+	
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
