@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JPorry's github site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<nav>
+    <header>
+        <h1><a href="index.html">JPorry</a></h1>
+        <h2>GitHub Projects</h2>
+    </header>
+    <button class="secondary"><i class="fa fa-bars"></i></button>
+    <div class="side-menu">
+        <ul>
+            <li><a href="scss.html">SCSS Mixins</a></li>
+            <li class="selected"><a href="components.html">CSS Components</a></li>
+        </ul>
+    </div>
+</nav>
+<section>
+    <h1>CSS COMPONENTS</h1>
+    <h2>Description</h2>
+    <p>A small collection of reusable and lightweight CSS components</p>
+    <h2>Components</h2>
+    <h3>Toolbar</h3>
+    <div class="demo-box">
+        <div class="toolbar">
+            <h1 class="title">Example</h1>
+            <button class="toggleMenu"><i class="fa fa-bars"></i></button>
+            <div class="menu right">
+                <ul class="menu-section">
+                    <li class="active">Option 1</li>
+                    <li>Option 2</li>
+                    <li>Option 3</li>
+                </ul>
+                <ul class="menu-section">
+                    <li>Option 4</li>
+                </ul>
+            </div>
+        </div>
+        <br/>
+        <table>
+            <thead><td width="300px">Variable</td><td>Default</td></thead>
+            <tr><td>$toolbar-background-color</td><td>$darkColor</td></tr>
+            <tr><td>$toolbar-text-color</td><td>$lightColor</td></tr>
+            <tr><td>$toolbar-highlight-color</td><td>$contrastColor</td></tr>
+            <tr><td>$toolbar-height</td><td>50px</td></tr>
+            <tr><td>$toolbar-menu-font-size</td><td>.9rem</td></tr>
+        </table>
+        <pre><code class="language-markup">
+&lt;div class="toolbar">
+    &lt;h1 class="title">Example&lt;/h1>
+    &lt;button class="toggleMenu">&lt;i class="fa fa-bars">&lt;/i>&lt;/button>
+    &lt;div class="menu right">
+        &lt;ul class="menu-section">
+            &lt;li class="active">Option 1&lt;/li>
+            &lt;li>Option 2&lt;/li>
+            &lt;li>Option 3&lt;/li>
+        &lt;/ul>
+        &lt;ul class="menu-section">
+            &lt;li>Option 4&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/div></code></pre>
+    </div>
+
+    <h3>Vertical Menu</h3>
+    <div class="demo-box">
+        <div class="side-menu">
+            <h3 class="side-menu-title">Menu 1</h3>
+            <ul>
+                <li class="selected"><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+            </ul>
+            <h3 class="side-menu-title">Menu 2</h3>
+            <ul>
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+            </ul>
+        </div>
+        <br/>
+        <table>
+            <thead><td width="300px">Variable</td><td>Default</td></thead>
+            <tr><td>$side-menu-background-color</td><td>$darkColor</td></tr>
+            <tr><td>$side-menu-text-color</td><td>$lightColor</td></tr>
+            <tr><td>$side-menu-highlighted-color</td><td>$contrastColor</td></tr>
+        </table>
+        <pre><code class="language-markup">
+&lt;div class="side-menu">
+    &lt;h3 class="side-menu-title">Menu 1&lt;/h3>
+    &lt;ul>
+        &lt;li class="selected">&lt;a href="#">Option 1&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Option 2&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Option 3&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;h3 class="side-menu-title">Menu 2&lt;/h3>
+    &lt;ul>
+        &lt;li>&lt;a href="#">Option 1&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Option 2&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div></code></pre>
+    </div>
+
+</section>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/toolbelt.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
