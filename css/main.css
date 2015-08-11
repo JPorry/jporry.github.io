@@ -198,6 +198,19 @@ button.block {
   width: 100%;
 }
 
+button.icon {
+  min-width: 0;
+  padding: 10px;
+}
+
+button.icon.big {
+  padding: 15px 20px;
+}
+
+button.icon.small {
+  padding: 8px;
+}
+
 label.input {
   display: block;
   position: relative;
