@@ -1,34 +1,82 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,800,400);
-@keyframes rotate-right {
+@-webkit-keyframes rotate-right {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-right {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-left {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 
 @keyframes rotate-left {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes boop {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  40% {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+  }
+  60% {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
 }
 
 @keyframes boop {
   0% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   40% {
-    transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
   }
   60% {
-    transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
   }
   100% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
 }
 
@@ -55,7 +103,9 @@
   position: absolute;
   width: 100%;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.1);
   padding: 40px;
 }
@@ -74,30 +124,40 @@
 }
 
 .top-layer .bg.animated svg circle {
-  transform-origin: 200px 200px;
-  transform: translate3d(0, 0, 0);
-  animation: rotate-right 12s linear infinite 0s;
+  -webkit-transform-origin: 200px 200px;
+      -ms-transform-origin: 200px 200px;
+          transform-origin: 200px 200px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-animation: rotate-right 12s linear infinite 0s;
+          animation: rotate-right 12s linear infinite 0s;
 }
 
 .top-layer .bg.animated svg circle + circle {
-  animation: rotate-left 12s linear infinite 0s;
-  transform: translate3d(0, 0, 20px);
+  -webkit-animation: rotate-left 12s linear infinite 0s;
+          animation: rotate-left 12s linear infinite 0s;
+  -webkit-transform: translate3d(0, 0, 20px);
+          transform: translate3d(0, 0, 20px);
 }
 
 .top-layer .bg.animated svg circle + circle + circle {
-  animation: rotate-left 24s linear infinite 0s;
+  -webkit-animation: rotate-left 24s linear infinite 0s;
+          animation: rotate-left 24s linear infinite 0s;
 }
 
 .top-layer .bg.animated svg circle + circle + circle + circle {
-  animation: rotate-right 40s linear infinite 0s;
+  -webkit-animation: rotate-right 40s linear infinite 0s;
+          animation: rotate-right 40s linear infinite 0s;
 }
 
 .top-layer .bg.animated svg circle + circle + circle + circle + circle {
-  animation: rotate-left 22s linear infinite 0s;
+  -webkit-animation: rotate-left 22s linear infinite 0s;
+          animation: rotate-left 22s linear infinite 0s;
 }
 
 .top-layer .bg.animated svg circle + circle + circle + circle + circle + circle {
-  animation: rotate-right 70s linear infinite 0s;
+  -webkit-animation: rotate-right 70s linear infinite 0s;
+          animation: rotate-right 70s linear infinite 0s;
 }
 
 .top-layer h1, .top-layer h2 {
@@ -122,7 +182,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  perspective: 500px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
 }
 
 .top-layer .pixels .pixel {
@@ -227,50 +288,69 @@
 }
 
 .skill-section.active .dot {
-  animation: boop linear 0.8s;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
+  -webkit-animation: boop linear 0.8s;
+          animation: boop linear 0.8s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
   opacity: 1;
 }
 
 .skill-section.active .dot:nth-child(2) {
-  animation-delay: 0.2s;
-  transition-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .skill-section.active .dot:nth-child(3) {
-  animation-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 
 .skill-section.active .dot:nth-child(4) {
-  animation-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 .skill-section.active .dot:nth-child(5) {
-  animation-delay: 0.5s;
-  transition-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .skill-section.active .dot:nth-child(6) {
-  animation-delay: 0.6s;
-  transition-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 
 .skill-section.active .dot:nth-child(7) {
-  animation-delay: 0.7s;
-  transition-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
 }
 
 .skill-section.active .dot:nth-child(8) {
-  animation-delay: 0.8s;
-  transition-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
 }
 
 .skill-section.active .dot:nth-child(9) {
-  animation-delay: 0.9s;
-  transition-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
 }
 
 .experience-section .record {
@@ -299,7 +379,8 @@
   bottom: 0;
   left: 5px;
   max-height: 0%;
-  transition: max-height 1.2s;
+  -webkit-transition: max-height 1.2s;
+          transition: max-height 1.2s;
 }
 
 .experience-section .record .graph.animated div {
@@ -396,7 +477,8 @@
   font-weight: lighter;
   color: #aaa;
   margin-bottom: 4px;
-  transition: color 0.6s;
+  -webkit-transition: color 0.6s;
+          transition: color 0.6s;
 }
 
 .experience-section a:HOVER {
@@ -464,7 +546,8 @@ html {
   top: -80px;
   height: 80px;
   overflow: hidden;
-  transition: top 0.6s;
+  -webkit-transition: top 0.6s;
+          transition: top 0.6s;
 }
 
 .top-bar .title {
@@ -581,7 +664,9 @@ html {
   .block .contact .links {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
@@ -611,7 +696,8 @@ html {
   text-decoration: none;
   font-size: 1.2rem;
   margin-bottom: 5px;
-  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+          transition: color 0.5s;
 }
 
 .block .contact a:hover {
