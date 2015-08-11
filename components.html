@@ -192,6 +192,70 @@
 &lt;button class="block info small">Info Small&lt;/button>
         </code></pre>
     </div>
+    <h3>Inputs</h3>
+    <div class="demo-box">
+        <form action="">
+            <label class="input error">First Name
+                <input type="text"  placeholder="Some text"/>
+            </label>
+            <label class="input">Last Name
+                <input type="text"  placeholder="Some text"/>
+            </label>
+        </form>
+        <form action="">
+            <label class="input inline error">First Name
+                <input type="text"  placeholder="Some text"/>
+            </label>
+            <label class="input inline">Last Name
+                <input type="text"  placeholder="Some text"/>
+            </label>
+        </form>
+        <form action="">
+            <label class="input icon username">
+                <i class="fa fa-user"></i><input type="text" placeholder="Username" />
+            </label>
+            <label class="input icon email error">
+                <i class="fa fa-key"></i><input type="email" placeholder="Email@domain.es" />
+            </label>
+        </form>
+        <br/>
+        <table>
+            <thead><td width="300px">Variable</td><td>Default</td></thead>
+            <tr><td>$input-border-color-focus</td><td>$contrastColor</td></tr>
+            <tr><td>$input-error-color</td><td>$dangerColor</td></tr>
+            <tr><td>$input-border-color</td><td>$midtone</td></tr>
+            <tr><td>$input-icon-background-color</td><td>$contrastColor</td></tr>
+            <tr><td>$input-icon-color</td><td>rgba(0,0,0,.5)</td></tr>
+        </table>
+        <pre><code class="language-markup">
+&lt;form action="">
+    &lt;label class="input error">First Name
+        &lt;input type="text"  placeholder="Some text"/>
+    &lt;/label>
+    &lt;label class="input">Last Name
+        &lt;input type="text"  placeholder="Some text"/>
+    &lt;/label>
+&lt;/form>
+&lt;form action="">
+    &lt;label class="input inline error">First Name
+        &lt;input type="text"  placeholder="Some text"/>
+    &lt;/label>
+    &lt;label class="input inline">Last Name
+        &lt;input type="text"  placeholder="Some text"/>
+    &lt;/label>
+&lt;/form>
+&lt;form action="">
+    &lt;label class="input icon username">
+        &lt;i class="fa fa-user">&lt;/i>&lt;input type="text" placeholder="Username" />
+    &lt;/label>
+    &lt;label class="input icon email error">
+        &lt;i class="fa fa-key">&lt;/i>&lt;input type="email" placeholder="Email@domain.es" />
+    &lt;/label>
+&lt;/form>
+        </code></pre>
+
+
+    </div>
 
 </section>
 <script src="js/jquery-1.11.3.min.js"></script>

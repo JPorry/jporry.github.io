@@ -234,41 +234,47 @@ label.input input:focus {
   border: 1px solid #F39C12;
 }
 
-label.input.inline {
-  display: inline-block;
-  width: 100%;
-  text-align: right;
-  vertical-align: middle;
-  padding-right: 75%;
-  height: 40px;
-}
-
-label.input.inline input {
-  position: absolute;
-  top: -20px;
-  display: inline-block;
-  width: 75%;
-  margin-left: 15px;
+@media screen and (min-width: 768px) {
+  label.input.inline {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    height: 40px;
+  }
+  label.input.inline input {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    display: inline-block;
+    width: 75%;
+    margin-left: 15px;
+  }
 }
 
 label.input.icon {
   overflow: hidden;
 }
 
-label.input.icon input {
+label.input.icon > i {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #F39C12;
+  padding: 10px 0;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #F39C12;
+}
+
+label.input.icon > i + input {
   display: block;
   width: calc(100% - 40px);
   float: right;
+  height: 40px;
   border-left: none !important;
   margin-top: 0;
-}
-
-label.input.icon.error:after {
-  background-color: #E74C3C !important;
-}
-
-label.input.icon.error:before {
-  border-left-color: #E74C3C;
 }
 
 label.input.icon:before {
@@ -280,30 +286,17 @@ label.input.icon:before {
   border: 9px solid transparent;
   border-left: 7px solid #F39C12;
   z-index: 2;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-label.input.icon:after {
-  content: '';
-  display: inline-block;
-  position: relative;
-  float: left;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background: url('data:image/svg+xml;utf8,<svg enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><path d="M30.933,32.528c-0.146-1.612-0.09-2.737-0.09-4.21c0.73-0.383,2.038-2.825,2.259-4.888c0.574-0.047,1.479-0.607,1.744-2.818  c0.143-1.187-0.425-1.855-0.771-2.065c0.934-2.809,2.874-11.499-3.588-12.397c-0.665-1.168-2.368-1.759-4.581-1.759  c-8.854,0.163-9.922,6.686-7.981,14.156c-0.345,0.21-0.913,0.878-0.771,2.065c0.266,2.211,1.17,2.771,1.744,2.818  c0.22,2.062,1.58,4.505,2.312,4.888c0,1.473,0.055,2.598-0.091,4.21C19.367,37.238,7.546,35.916,7,45h38  C44.455,35.916,32.685,37.238,30.933,32.528z" style="fill:rgba(0,0,0,.3);"/></svg>') #F39C12 no-repeat 4px;
-  background-size: 30px;
+label.input.icon.error > i {
+  background-color: #E74C3C;
+  border-color: #E74C3C;
 }
 
-label.input.icon.password:after {
-  background: url('data:image/svg+xml;utf8,<svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48h-48z" fill="none"/><path d="M25.3 20c-1.65-4.66-6.08-8-11.3-8-6.63 0-12 5.37-12 12s5.37 12 12 12c5.22 0 9.65-3.34 11.3-8h8.7v8h8v-8h4v-8h-20.7zm-11.3 8c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" style="fill:rgba(0,0,0,.3);" /></svg>') #F39C12 no-repeat 8px;
-  background-size: 25px;
-}
-
-label.input.icon.email:after {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" height="331.5" version="1" width="439.4"><defs><marker markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="0" refY="5" viewBox="0 0 10 10"><path d="M0 0L10 5 0 10 0 0z"></path></marker><marker markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="10" refY="5" viewBox="0 0 10 10"><path d="M10 0L0 5 10 10 10 0z"></path></marker></defs><g transform="translate(-145.3305,-145.3305)"><path d="M569.4 461.5L569.4 160.7 160.7 160.7 160.7 461.5 569.4 461.5zM164.5 164.5L340.8 343.2C353.8 356.3 377.6 356.2 390.4 343.3L566.6 165.9M170.5 451.6L305.6 313.5M558 450L426.5 315.4" style="fill:none;stroke-width:30.7;stroke:rgba(0,0,0,.3);"></path></g></svg>') #F39C12 no-repeat 8px;
-  background-size: 22px;
+label.input.icon.error:before {
+  border-left-color: #E74C3C;
 }
 
 label.input.error input {
