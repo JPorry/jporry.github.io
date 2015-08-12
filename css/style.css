@@ -372,7 +372,7 @@
 }
 
 .design .skill .knowledge .dot.full {
-  background-color: #E8ED86;
+  background-color: #f0b66b;
 }
 
 .skill {
@@ -540,8 +540,8 @@
 }
 
 .experience-section .record .graph .Design {
-  background-color: #E8ED86;
-  border-color: #8A8D50;
+  background-color: #f0b66b;
+  border-color: #ee8c0e;
   left: 53px;
 }
 
@@ -578,7 +578,7 @@
 }
 
 .experience-section .record .tooltip p + p + p + p + p {
-  color: #E8ED86;
+  color: #ee8c0e;
 }
 
 .experience-section h3.title {
