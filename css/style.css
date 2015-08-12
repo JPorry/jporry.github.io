@@ -81,13 +81,13 @@
 }
 
 .top-layer {
-  background-color: #FFFFFA;
+  background-color: #E9EBF7;
   background-size: 250px;
   width: 100%;
   height: 500px;
   position: fixed;
   padding-top: 80px;
-  color: #000;
+  color: #FFF;
 }
 
 .top-layer .top {
@@ -102,12 +102,29 @@
 .top-layer .top .main-title {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 33%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.1);
   padding: 40px;
+}
+
+@-webkit-keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100000px;
+  }
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100000px;
+  }
 }
 
 .top-layer .bg {
@@ -116,48 +133,160 @@
   bottom: 0;
   left: 0;
   right: 0;
+  background: -webkit-linear-gradient(top, #2A3D78 0%, #D14293 100%) #000;
+  background: linear-gradient(to bottom, #2A3D78 0%, #D14293 100%) #000;
+  /*&.stop{
+			
+			svg circle{
+				animation-duration: 0s !important;
+			}
+			
+		}*/
+}
+
+@-webkit-keyframes glitter {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitter {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.top-layer .bg svg .star {
+  -webkit-animation: glitter 4.5s linear 0s infinite normal;
+          animation: glitter 4.5s linear 0s infinite normal;
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.top-layer .bg svg .star:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.top-layer .bg svg .star:nth-child(3) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.top-layer .bg svg .star:nth-child(4) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
+}
+
+.top-layer .bg svg .star:nth-child(5) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-transition-delay: 2.5s;
+          transition-delay: 2.5s;
+}
+
+.top-layer .bg svg .star:nth-child(6) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-transition-delay: 3s;
+          transition-delay: 3s;
+}
+
+.top-layer .bg svg .star:nth-child(7) {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-transition-delay: 3.5s;
+          transition-delay: 3.5s;
+}
+
+.top-layer .bg svg .star:nth-child(8) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-transition-delay: 4s;
+          transition-delay: 4s;
+}
+
+.top-layer .bg svg .star:nth-child(9) {
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-transition-delay: 4.5s;
+          transition-delay: 4.5s;
+}
+
+.top-layer .bg:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: -webkit-calc(100% - 50px);
+  top: calc(100% - 50px);
+  left: 0;
+  background-color: #000;
+  height: 100%;
 }
 
 .top-layer .bg.animated svg {
   width: 100%;
   height: 100%;
-}
-
-.top-layer .bg.animated svg circle {
-  -webkit-transform-origin: 200px 200px;
-      -ms-transform-origin: 200px 200px;
-          transform-origin: 200px 200px;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-animation: rotate-right 12s linear infinite 0s;
-          animation: rotate-right 12s linear infinite 0s;
-}
-
-.top-layer .bg.animated svg circle + circle {
-  -webkit-animation: rotate-left 12s linear infinite 0s;
-          animation: rotate-left 12s linear infinite 0s;
-  -webkit-transform: translate3d(0, 0, 20px);
-          transform: translate3d(0, 0, 20px);
-}
-
-.top-layer .bg.animated svg circle + circle + circle {
-  -webkit-animation: rotate-left 24s linear infinite 0s;
-          animation: rotate-left 24s linear infinite 0s;
-}
-
-.top-layer .bg.animated svg circle + circle + circle + circle {
-  -webkit-animation: rotate-right 40s linear infinite 0s;
-          animation: rotate-right 40s linear infinite 0s;
-}
-
-.top-layer .bg.animated svg circle + circle + circle + circle + circle {
-  -webkit-animation: rotate-left 22s linear infinite 0s;
-          animation: rotate-left 22s linear infinite 0s;
-}
-
-.top-layer .bg.animated svg circle + circle + circle + circle + circle + circle {
-  -webkit-animation: rotate-right 70s linear infinite 0s;
-          animation: rotate-right 70s linear infinite 0s;
+  /*circle{
+				transform-origin: 200px 200px;
+				animation: rotate-right 12s linear infinite 0s;
+				-webkit-transform: translate3d(0,0,0);
+				stroke-opacity: .1; 
+			}
+			circle+circle{
+				animation: rotate-left 12s linear infinite 0s;
+				//animation: none;
+				
+			}
+	
+			circle+circle+circle{
+				animation: rotate-left 24s linear infinite 0s;
+			}
+	
+			circle+circle+circle+circle{
+				animation: rotate-right 40s linear infinite 0s;
+			}
+	
+			circle+circle+circle+circle+circle{
+				animation: rotate-left 22s linear infinite 0s;
+	
+			}
+	
+			circle+circle+circle+circle+circle+circle{
+				animation: rotate-right 70s linear infinite 0s;
+			}*/
 }
 
 .top-layer h1, .top-layer h2 {
@@ -531,7 +660,7 @@ html, button, input, select, textarea, .pure-g [class*="pure-u"] {
 }
 
 html {
-  background-color: #FFFFFA;
+  background-color: #E9EBF7;
 }
 
 .anchor {
@@ -642,14 +771,14 @@ html {
 }
 
 .block .skills {
-  background-color: #fff;
+  background-color: #E9EBF7;
   padding-bottom: 100px;
   box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.54);
 }
 
 .block .experience-section {
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: #E9EBF7;
   box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.54);
 }
 
